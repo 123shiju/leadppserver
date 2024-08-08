@@ -8,7 +8,13 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://leadappclient.onrender.com"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credential: true,
+  })
+);
 
 app.use(bodyParser.json());
 
